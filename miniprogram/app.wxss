@@ -1,0 +1,174 @@
+page {
+  min-height: 100%;
+  background: #f5f7f3;
+  color: #202c28;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+}
+
+view, text, button, input, textarea, picker {
+  box-sizing: border-box;
+}
+
+.page {
+  padding: 24rpx 30rpx 48rpx;
+}
+
+.section {
+  margin-top: 34rpx;
+}
+
+.section-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 18rpx;
+  font-size: 34rpx;
+  font-weight: 700;
+}
+
+.subtle {
+  color: #63716a;
+  font-size: 28rpx;
+  line-height: 1.55;
+}
+
+.card {
+  margin-bottom: 18rpx;
+  padding: 24rpx;
+  border: 1rpx solid #e0e6e1;
+  border-radius: 16rpx;
+  background: #fff;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 92rpx;
+  padding: 0 26rpx;
+  border: 0;
+  border-radius: 14rpx;
+  color: #fff;
+  background: #17664f;
+  font-size: 30rpx;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.button::after {
+  border: 0;
+}
+
+.button-secondary {
+  color: #245c47;
+  background: #e6f1eb;
+}
+
+.button-danger {
+  color: #a84037;
+  background: #fbecea;
+}
+
+.button-plain {
+  color: #34443d;
+  background: #edf1ed;
+}
+
+.button + .button {
+  margin-top: 14rpx;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42rpx;
+  margin: 6rpx 8rpx 0 0;
+  padding: 0 12rpx;
+  border-radius: 8rpx;
+  color: #245c47;
+  background: #e6f1eb;
+  font-size: 25rpx;
+}
+
+.notice {
+  margin: 20rpx 0;
+  padding: 18rpx;
+  border-radius: 12rpx;
+  color: #70552a;
+  background: #fff4dd;
+  font-size: 27rpx;
+  line-height: 1.5;
+}
+
+.field {
+  margin: 24rpx 0;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 12rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.field-input {
+  width: 100%;
+  min-height: 88rpx;
+  padding: 18rpx;
+  border: 1rpx solid #d5ded7;
+  border-radius: 12rpx;
+  background: #fff;
+  font-size: 28rpx;
+}
+
+.field-textarea {
+  width: 100%;
+  min-height: 150rpx;
+  padding: 18rpx;
+  border: 1rpx solid #d5ded7;
+  border-radius: 12rpx;
+  background: #fff;
+  font-size: 28rpx;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.divider {
+  height: 1rpx;
+  margin: 20rpx 0;
+  background: #e8ede9;
+}
+
+.demo-mark {
+  display: inline-block;
+  padding: 8rpx 12rpx;
+  border-radius: 8rpx;
+  color: #725421;
+  background: #fff4dd;
+  font-size: 25rpx;
+}
+
+.large-text .subtle,
+.large-text .provider-description,
+.large-text .menu-desc,
+.large-text .field-label,
+.large-text .field-input,
+.large-text .field-textarea,
+.large-text .button,
+.large-text .detail-row,
+.large-text .event-title,
+.large-text .notice {
+  font-size: 32rpx;
+}
+
+.large-text .tag,
+.large-text .status-tag,
+.large-text .event-meta {
+  font-size: 27rpx;
+}

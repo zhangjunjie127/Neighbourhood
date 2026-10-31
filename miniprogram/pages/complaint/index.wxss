@@ -1,0 +1,16 @@
+.heading {
+  margin: 6rpx 0 8rpx;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.picker-value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.picker-value text {
+  color: #63716a;
+  font-size: 24rpx;
+}

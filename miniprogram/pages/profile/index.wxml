@@ -1,0 +1,37 @@
+<view class="page {{largeText ? 'large-text' : ''}}">
+  <view class="profile-head">
+    <view class="profile-mark">邻</view>
+    <view>
+      <view class="profile-name">邻里照护</view>
+      <view class="subtle">供需撮合演示账号</view>
+    </view>
+    <text class="demo-mark">本地数据</text>
+  </view>
+
+  <view class="section card">
+    <view class="menu-row" bindtap="openFlow">
+      <view><text class="menu-title">我的需求</text><text class="menu-desc">查看预约进度、处理记录和评价</text></view>
+      <text class="arrow">›</text>
+    </view>
+    <view class="divider"></view>
+    <view class="menu-row" bindtap="openPartner">
+      <view><text class="menu-title">服务方入驻</text><text class="menu-desc">提交演示资料，体验平台审核流程</text></view>
+      <text class="arrow">›</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">演示环境</view>
+    <view class="card">
+      <view class="subtle">当前操作使用本地 Mock 数据。没有真实登录、线上派单、支付、短信或地图服务。</view>
+      <button class="button button-plain reset-button" bindtap="resetDemo">重置全部演示数据</button>
+    </view>
+  </view>
+
+  <view class="section card setting-row">
+    <view><text class="menu-title">大字模式</text><text class="menu-desc">放大正文和常用操作文字</text></view>
+    <switch checked="{{largeText}}" color="#17664F" bindchange="onLargeTextChange" />
+  </view>
+
+  <view class="notice">平台仅提供信息展示与供需撮合的产品演示；服务内容由服务方提供。</view>
+</view>

@@ -1,0 +1,68 @@
+.profile-head {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  min-height: 122rpx;
+}
+
+.profile-mark {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 84rpx;
+  height: 84rpx;
+  border-radius: 24rpx;
+  color: #fff;
+  background: #17664f;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.profile-head > .demo-mark {
+  margin-left: auto;
+}
+
+.profile-name {
+  margin-bottom: 5rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.menu-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 104rpx;
+}
+
+.menu-title,
+.menu-desc {
+  display: block;
+}
+
+.menu-title {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.menu-desc {
+  margin-top: 6rpx;
+  color: #63716a;
+  font-size: 26rpx;
+}
+
+.arrow {
+  color: #718078;
+  font-size: 42rpx;
+}
+
+.reset-button {
+  margin-top: 18rpx;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}

@@ -1,0 +1,58 @@
+<view class="page home {{largeText ? 'large-text' : ''}}">
+  <view class="home-top row">
+    <view>
+      <view class="brand-line"><text class="brand-mark">邻</text><text class="brand-name">邻里照护</text></view>
+      <view class="location">杭州 · 拱墅区　⌄</view>
+    </view>
+    <text class="demo-mark">演示数据</text>
+  </view>
+
+  <view class="hero">
+    <view class="hero-title">为家里人，<br />找一份合适的照护</view>
+    <view class="hero-copy">服务内容和价格先了解清楚，再决定是否联系。</view>
+    <view class="search-box">
+      <text class="search-mark"></text>
+      <input placeholder="搜陪诊、助洁或服务机构" value="{{keyword}}" bindinput="onSearch" confirm-type="search" />
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title"><text>按需求找服务</text><text class="subtle small">服务信息均为演示</text></view>
+    <view class="category-grid">
+      <button class="category {{selectedCategory === '陪诊就医' ? 'category-active' : ''}}" data-category="陪诊就医" bindtap="onCategory">
+        <text class="category-symbol">陪</text><text>陪诊就医</text>
+      </button>
+      <button class="category {{selectedCategory === '上门助洁' ? 'category-active' : ''}}" data-category="上门助洁" bindtap="onCategory">
+        <text class="category-symbol">洁</text><text>上门助洁</text>
+      </button>
+    </view>
+  </view>
+
+  <view class="notice">
+    <text class="notice-title">平台角色说明</text>
+    <text>平台提供信息展示和供需撮合；服务由入驻服务方提供。此版本仅用于流程演示，不产生真实预约。</text>
+  </view>
+
+  <view class="section">
+    <view class="section-title"><text>附近的服务方</text><text class="subtle small">拱墅区</text></view>
+    <block wx:for="{{providers}}" wx:key="id">
+      <view class="provider-card" data-id="{{item.id}}" bindtap="openProvider">
+        <view class="provider-art {{item.artClass}}">
+          <view class="art-sun"></view><view class="art-hill"></view>
+        </view>
+        <view class="provider-content">
+          <view class="row provider-heading">
+            <text class="provider-name">{{item.name}}</text>
+            <text class="provider-price">¥{{item.price}}<text class="per"> 起</text></text>
+          </view>
+          <view class="provider-description">{{item.service}} · {{item.distance}}</view>
+          <view class="provider-description">{{item.hours}}</view>
+          <text class="verify-tag">资料已核验 · 演示</text>
+        </view>
+      </view>
+    </block>
+    <view wx:if="{{providers.length === 0}}" class="empty-state">没有匹配的服务方，可换个关键词试试。</view>
+  </view>
+
+  <button class="button publish-cta" bindtap="createDemand">发布需求，等服务方响应</button>
+</view>

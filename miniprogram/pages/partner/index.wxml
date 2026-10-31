@@ -1,0 +1,58 @@
+<view class="page {{largeText ? 'large-text' : ''}}">
+  <view class="page-title">服务方入驻演示</view>
+  <view class="subtle intro">真实上线前需要核验服务主体、服务范围及相关材料。本页不收集或上传证件，只模拟申请和审核状态。</view>
+
+  <view class="role-switch">
+    <button class="role-button {{role === 'provider' ? 'role-active' : ''}}" data-role="provider" bindtap="changeRole">服务方</button>
+    <button class="role-button {{role === 'ops' ? 'role-active' : ''}}" data-role="ops" bindtap="changeRole">平台运营</button>
+  </view>
+
+  <view wx:if="{{!application || application.status === 'needs_update' || application.status === 'rejected'}}">
+    <view class="card">
+      <view class="card-title">提交入驻申请</view>
+      <view class="field">
+        <text class="field-label">服务主体名称</text>
+        <input class="field-input" value="{{name}}" bindinput="onNameInput" maxlength="40" placeholder="填写演示名称" />
+      </view>
+      <view class="field">
+        <text class="field-label">提供的服务</text>
+        <picker mode="selector" range="{{categories}}" value="{{categoryIndex}}" bindchange="onCategoryChange">
+          <view class="field-input picker-value">{{categories[categoryIndex]}}<text>⌄</text></view>
+        </picker>
+      </view>
+      <view class="field">
+        <text class="field-label">服务区域</text>
+        <input class="field-input" value="{{region}}" bindinput="onRegionInput" maxlength="40" />
+      </view>
+      <button wx:if="{{role === 'provider'}}" class="button" bindtap="submit">提交演示申请</button>
+      <view wx:else class="subtle">切换到服务方角色后可提交申请。</view>
+    </view>
+  </view>
+
+  <view wx:if="{{application}}" class="card application-card">
+    <view class="row">
+      <view class="card-title">{{application.name}}</view>
+      <text class="status-tag {{application.status === 'approved' ? 'status-approved' : 'status-pending'}}">{{statusLabel}}</text>
+    </view>
+    <view class="detail-line"><text>服务类型</text><text>{{application.category}}</text></view>
+    <view class="detail-line"><text>服务区域</text><text>{{application.region}}</text></view>
+    <view wx:if="{{application.reviewNote}}" class="notice">审核意见：{{application.reviewNote}}</view>
+    <view wx:if="{{role === 'ops' && application.status === 'pending_review'}}" class="review-actions">
+      <button class="button" data-decision="approve" bindtap="review">模拟审核通过</button>
+      <button class="button button-secondary" data-decision="request_more" bindtap="review">要求补充资料</button>
+      <button class="button button-danger" data-decision="reject" bindtap="review">模拟审核不通过</button>
+    </view>
+    <view wx:if="{{role === 'provider' && application.status === 'pending_review'}}" class="subtle pending-copy">申请已提交，等待平台运营模拟审核。</view>
+    <view wx:if="{{application.status === 'approved'}}" class="approved-copy">审核通过，演示服务方状态为“可上架”。未发生真实资质核验。</view>
+  </view>
+
+  <view wx:if="{{events.length}}" class="card">
+    <view class="card-title">申请记录</view>
+    <view wx:for="{{events}}" wx:key="at" class="event-row">
+      <view class="event-dot"></view>
+      <view><view>{{item.title}}</view><view class="subtle event-meta">{{item.actor}} · {{item.time}}</view></view>
+    </view>
+  </view>
+
+  <view class="notice">此审核只改变本地演示状态，不等同于真实资质审核，也不会让真实服务方上线。</view>
+</view>

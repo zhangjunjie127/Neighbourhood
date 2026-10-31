@@ -1,0 +1,51 @@
+<view class="page {{largeText ? 'large-text' : ''}}">
+  <view class="page-heading">
+    <view class="heading-title">发布服务需求</view>
+    <view class="subtle">提供基本服务信息，等待合适的服务方响应。</view>
+  </view>
+
+  <view class="demo-mark">演示流程 · 不会联系真实服务方</view>
+
+  <view class="field">
+    <text class="field-label">服务类型</text>
+    <picker mode="selector" range="{{categoryOptions}}" value="{{categoryIndex}}" bindchange="onCategoryChange">
+      <view class="field-input picker-value">{{categoryOptions[categoryIndex]}}<text>⌄</text></view>
+    </picker>
+  </view>
+
+  <view class="field">
+    <text class="field-label">服务区域</text>
+    <input class="field-input" value="{{region}}" placeholder="例如：杭州 · 拱墅区" bindinput="onRegionInput" maxlength="30" />
+  </view>
+
+  <view class="field">
+    <text class="field-label">希望服务日期</text>
+    <picker mode="date" value="{{date}}" start="{{today}}" bindchange="onDateChange">
+      <view class="field-input picker-value">{{date}}<text>选择日期</text></view>
+    </picker>
+  </view>
+
+  <view class="field">
+    <text class="field-label">时间段</text>
+    <picker mode="selector" range="{{timeOptions}}" value="{{timeIndex}}" bindchange="onTimeChange">
+      <view class="field-input picker-value">{{timeOptions[timeIndex]}}<text>⌄</text></view>
+    </picker>
+  </view>
+
+  <view class="field">
+    <text class="field-label">行动情况 <text class="optional">选填</text></text>
+    <picker mode="selector" range="{{mobilityOptions}}" value="{{mobilityIndex}}" bindchange="onMobilityChange">
+      <view class="field-input picker-value">{{mobilityOptions[mobilityIndex]}}<text>⌄</text></view>
+    </picker>
+  </view>
+
+  <view class="field">
+    <text class="field-label">服务说明 <text class="optional">选填</text></text>
+    <textarea class="field-textarea" value="{{note}}" placeholder="只填写服务安排需要注意的事项，请勿填写病历、证件号等敏感信息。" maxlength="160" bindinput="onNoteInput" />
+  </view>
+
+  <view class="privacy-copy">
+    本地演示版本：信息仅保存在当前设备用于模拟流程，不会发送给服务方。暂不填写姓名、手机号或精确住址。
+  </view>
+  <button class="button submit-button" bindtap="submit">提交演示需求</button>
+</view>

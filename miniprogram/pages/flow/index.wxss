@@ -1,0 +1,294 @@
+.flow-page {
+  padding-top: 24rpx;
+}
+
+.role-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14rpx;
+}
+
+.page-title {
+  margin-bottom: 8rpx;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.role-switch {
+  display: flex;
+  gap: 8rpx;
+  margin: 25rpx 0 20rpx;
+  padding: 6rpx;
+  border: 1rpx solid #e0e6e1;
+  border-radius: 13rpx;
+  background: #fff;
+}
+
+.role-button {
+  flex: 1;
+  min-height: 76rpx;
+  margin: 0;
+  padding: 0 8rpx;
+  border-radius: 9rpx;
+  color: #63716a;
+  background: transparent;
+  font-size: 27rpx;
+}
+
+.role-button::after {
+  border: 0;
+}
+
+.role-active {
+  color: #fff;
+  background: #17664f;
+  font-weight: 700;
+}
+
+.empty-panel {
+  margin-top: 32rpx;
+  padding: 44rpx 27rpx;
+  border: 1rpx solid #e0e6e1;
+  border-radius: 16rpx;
+  background: #fff;
+  text-align: center;
+}
+
+.empty-title {
+  margin-bottom: 12rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.empty-button {
+  margin-top: 28rpx;
+}
+
+.order-card {
+  margin-top: 0;
+  padding: 22rpx;
+}
+
+.order-heading {
+  align-items: flex-start;
+}
+
+.order-id {
+  font-size: 25rpx;
+}
+
+.order-title {
+  margin-top: 4rpx;
+  font-size: 34rpx;
+  font-weight: 700;
+}
+
+.status-tag {
+  max-width: 210rpx;
+  padding: 9rpx 12rpx;
+  border-radius: 8rpx;
+  color: #245c47;
+  background: #e6f1eb;
+  text-align: center;
+  font-size: 25rpx;
+}
+
+.status-warning {
+  color: #765524;
+  background: #fff4dd;
+}
+
+.status-danger {
+  color: #a84037;
+  background: #fbecea;
+}
+
+.step-track {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rpx;
+  margin: 30rpx 0 20rpx;
+}
+
+.step {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  color: #7c8981;
+  font-size: 23rpx;
+  text-align: center;
+}
+
+.step:not(:last-child)::after {
+  position: absolute;
+  z-index: -1;
+  top: 18rpx;
+  left: 62%;
+  width: 76%;
+  height: 2rpx;
+  background: #dce3dd;
+  content: "";
+}
+
+.step-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38rpx;
+  height: 38rpx;
+  margin-bottom: 8rpx;
+  border: 2rpx solid #cfd8d1;
+  border-radius: 50%;
+  color: #64736a;
+  background: #fff;
+  font-size: 23rpx;
+}
+
+.step-done {
+  color: #245c47;
+}
+
+.step-done .step-dot {
+  border-color: #17664f;
+  color: #fff;
+  background: #17664f;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx;
+  padding: 15rpx 0;
+  border-top: 1rpx solid #edf0ed;
+  font-size: 27rpx;
+}
+
+.detail-row > text:first-child {
+  flex: none;
+  color: #63716a;
+}
+
+.detail-value {
+  max-width: 68%;
+  text-align: right;
+}
+
+.response-box,
+.booking-box,
+.complaint-box {
+  margin-top: 18rpx;
+  padding: 19rpx;
+  border-radius: 12rpx;
+  background: #f2f6f2;
+}
+
+.response-title {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.response-description {
+  margin-top: 7rpx;
+}
+
+.response-meta {
+  margin-top: 12rpx;
+  color: #245c47;
+  font-size: 25rpx;
+}
+
+.section-mini-title {
+  margin-bottom: 7rpx;
+  font-size: 27rpx;
+  font-weight: 700;
+}
+
+.terms {
+  margin-top: 8rpx;
+  font-size: 25rpx;
+}
+
+.resolution {
+  margin-top: 12rpx;
+  padding: 12rpx;
+  border-radius: 9rpx;
+  color: #245c47;
+  background: #e6f1eb;
+  font-size: 26rpx;
+}
+
+.mock-notice {
+  margin-top: 18rpx;
+  color: #765524;
+  font-size: 25rpx;
+  line-height: 1.5;
+}
+
+.actions {
+  margin-top: 15rpx;
+}
+
+.action-button {
+  margin-top: 12rpx;
+}
+
+.timeline-card {
+  margin-top: 18rpx;
+  padding: 22rpx;
+}
+
+.timeline-title {
+  margin: 0 0 18rpx;
+  font-size: 30rpx;
+}
+
+.event {
+  display: flex;
+  gap: 14rpx;
+  min-height: 75rpx;
+}
+
+.event-rail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 20rpx;
+}
+
+.event:not(:last-child) .event-rail::after {
+  position: absolute;
+  top: 22rpx;
+  bottom: 0;
+  width: 2rpx;
+  background: #dfe7e1;
+  content: "";
+}
+
+.event-dot {
+  z-index: 1;
+  width: 14rpx;
+  height: 14rpx;
+  margin-top: 7rpx;
+  border: 3rpx solid #76a38c;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.event-content {
+  flex: 1;
+  padding-bottom: 17rpx;
+}
+
+.event-title {
+  font-size: 26rpx;
+}
+
+.event-meta {
+  margin-top: 4rpx;
+  color: #7d8983;
+  font-size: 24rpx;
+}

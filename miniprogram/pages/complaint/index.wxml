@@ -1,0 +1,26 @@
+<view class="page {{largeText ? 'large-text' : ''}}">
+  <view class="heading">服务问题反馈</view>
+  <view class="subtle">选择问题类型并写明情况。此版本只模拟提交，不会通知真实客服或服务方。</view>
+
+  <view class="field">
+    <text class="field-label">问题类型</text>
+    <picker mode="selector" range="{{categories}}" value="{{categoryIndex}}" bindchange="onCategoryChange">
+      <view class="field-input picker-value">{{categories[categoryIndex]}}<text>⌄</text></view>
+    </picker>
+  </view>
+
+  <view class="field">
+    <text class="field-label">情况说明</text>
+    <textarea class="field-textarea" value="{{description}}" placeholder="描述发生了什么，以及希望平台如何协助。请勿填写身份证号、病历等敏感信息。" maxlength="300" bindinput="onDescriptionInput" />
+  </view>
+
+  <view class="field">
+    <text class="field-label">期望处理方式</text>
+    <picker mode="selector" range="{{resolutionOptions}}" value="{{resolutionIndex}}" bindchange="onResolutionChange">
+      <view class="field-input picker-value">{{resolutionOptions[resolutionIndex]}}<text>⌄</text></view>
+    </picker>
+  </view>
+
+  <view class="notice">平台运营提出处理建议后，家属可确认关闭或申请复核。演示版本不会发生实际赔付。</view>
+  <button class="button" bindtap="submit">提交演示投诉</button>
+</view>

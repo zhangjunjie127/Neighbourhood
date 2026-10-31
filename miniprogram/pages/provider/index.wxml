@@ -1,0 +1,33 @@
+<view class="page {{largeText ? 'large-text' : ''}}">
+  <view class="cover">
+    <view class="cover-sun"></view>
+    <view class="cover-hill"></view>
+    <text class="cover-label">演示服务方</text>
+  </view>
+
+  <view class="provider-title">{{provider.name}}</view>
+  <view class="subtle provider-location">{{provider.region}} · {{provider.distance}}</view>
+  <view class="tag-row">
+    <text class="tag">平台资料已核验（演示）</text>
+    <text class="tag">服务范围已确认</text>
+  </view>
+
+  <view class="section card">
+    <view class="card-heading">服务说明</view>
+    <view class="subtle">{{provider.description}}</view>
+  </view>
+
+  <view class="section card">
+    <view class="card-heading">参考价格</view>
+    <view class="row price-row"><text>{{provider.service}}</text><text class="price">¥{{provider.price}} 起</text></view>
+    <view class="subtle price-note">超出服务范围的费用需在预约前另行确认。</view>
+  </view>
+
+  <view class="section card">
+    <view class="card-heading">服务方资料</view>
+    <view class="subtle">虚构服务主体，仅用于演示流程。<br />核验项目：主体资料、服务区域。<br />不代表真实机构或真实资质。</view>
+  </view>
+
+  <view class="notice">平台提供信息展示与供需撮合，具体服务由服务方提供。本版本不创建真实预约、不收取费用。</view>
+  <button class="button book-button" bindtap="createDemand">按此服务发布需求</button>
+</view>

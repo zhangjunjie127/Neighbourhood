@@ -1,0 +1,79 @@
+<view class="page flow-page {{largeText ? 'large-text' : ''}}">
+  <view class="role-header">
+    <view>
+      <view class="page-title">需求进度</view>
+      <view class="subtle">切换角色，模拟双方和运营处理流程。</view>
+    </view>
+    <text class="demo-mark">本地演示</text>
+  </view>
+
+  <view class="role-switch">
+    <button class="role-button {{role === 'consumer' ? 'role-active' : ''}}" data-role="consumer" bindtap="changeRole">家属</button>
+    <button class="role-button {{role === 'provider' ? 'role-active' : ''}}" data-role="provider" bindtap="changeRole">服务方</button>
+    <button class="role-button {{role === 'ops' ? 'role-active' : ''}}" data-role="ops" bindtap="changeRole">平台运营</button>
+  </view>
+
+  <view wx:if="{{!hasDemand}}" class="empty-panel">
+    <view class="empty-title">还没有演示需求</view>
+    <view class="subtle">先从首页选择服务或发布一条模拟需求，之后可以完整体验响应、预约和履约流程。</view>
+    <button class="button empty-button" bindtap="goPublish">发布演示需求</button>
+  </view>
+
+  <view wx:if="{{hasDemand}}" class="card order-card">
+    <view class="row order-heading">
+      <view>
+        <view class="subtle order-id">演示需求 · {{flow.demand.id}}</view>
+        <view class="order-title">{{flow.demand.category}}</view>
+      </view>
+      <text class="status-tag {{statusTone}}">{{statusLabel}}</text>
+    </view>
+
+    <view class="step-track">
+      <view wx:for="{{steps}}" wx:key="label" class="step {{item.done ? 'step-done' : ''}}">
+        <view class="step-dot">{{item.done ? '✓' : item.number}}</view>
+        <text>{{item.label}}</text>
+      </view>
+    </view>
+
+    <view class="detail-row"><text>服务区域</text><text>{{flow.demand.region}}</text></view>
+    <view class="detail-row"><text>希望时间</text><text>{{flow.demand.time}}</text></view>
+    <view class="detail-row"><text>行动情况</text><text>{{flow.demand.mobility}}</text></view>
+    <view class="detail-row"><text>服务说明</text><text class="detail-value">{{flow.demand.note}}</text></view>
+
+    <view wx:if="{{flow.response}}" class="response-box">
+      <view class="response-title">{{flow.response.providerName}}</view>
+      <view class="subtle response-description">{{flow.response.description}}</view>
+      <view class="response-meta">资料核验：演示通过　参考价格：¥{{flow.response.price}} 起</view>
+    </view>
+
+    <view wx:if="{{flow.booking}}" class="booking-box">
+      <view class="section-mini-title">服务单摘要</view>
+      <view class="detail-row"><text>服务方</text><text>{{flow.booking.providerName}}</text></view>
+      <view class="detail-row"><text>预约时间</text><text>{{flow.booking.time}}</text></view>
+      <view class="detail-row"><text>参考价格</text><text>¥{{flow.booking.price}} 起</text></view>
+      <view class="subtle terms">{{flow.booking.cancellationTerms}}</view>
+    </view>
+
+    <view wx:if="{{flow.complaint}}" class="complaint-box">
+      <view class="section-mini-title">投诉进度</view>
+      <view class="subtle">{{flow.complaint.description}}</view>
+      <view wx:if="{{flow.complaint.resolution}}" class="resolution">{{flow.complaint.resolution}}</view>
+    </view>
+
+    <view class="mock-notice">所有按钮只改变本机演示数据，不联系真实服务方、不产生真实预约或费用。</view>
+    <view class="actions">
+      <button wx:for="{{actions}}" wx:key="key" class="button action-button {{item.danger ? 'button-danger' : (item.primary ? '' : 'button-secondary')}}" data-action="{{item.key}}" bindtap="onAction">{{item.label}}</button>
+    </view>
+  </view>
+
+  <view wx:if="{{hasDemand}}" class="card timeline-card">
+    <view class="section-title timeline-title">处理记录</view>
+    <view wx:for="{{events}}" wx:key="id" class="event">
+      <view class="event-rail"><view class="event-dot"></view></view>
+      <view class="event-content">
+        <view class="event-title">{{item.title}}</view>
+        <view class="event-meta">{{item.actor}} · {{item.time}}</view>
+      </view>
+    </view>
+  </view>
+</view>

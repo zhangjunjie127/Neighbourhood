@@ -1,0 +1,90 @@
+.cover {
+  position: relative;
+  height: 280rpx;
+  overflow: hidden;
+  border-radius: 20rpx;
+  background: #dce9df;
+}
+
+.cover-sun {
+  position: absolute;
+  top: 36rpx;
+  right: 54rpx;
+  width: 62rpx;
+  height: 62rpx;
+  border-radius: 50%;
+  background: #f2bd76;
+}
+
+.cover-hill {
+  position: absolute;
+  bottom: -90rpx;
+  left: -60rpx;
+  width: 680rpx;
+  height: 220rpx;
+  border-radius: 50% 50% 0 0;
+  background: #6f9a78;
+}
+
+.cover-hill::after {
+  position: absolute;
+  right: -240rpx;
+  bottom: 30rpx;
+  width: 550rpx;
+  height: 185rpx;
+  border-radius: 50% 50% 0 0;
+  background: #8eaf91;
+  content: "";
+}
+
+.cover-label {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  padding: 9rpx 13rpx;
+  border-radius: 8rpx;
+  color: #27533f;
+  background: #fff;
+  font-size: 25rpx;
+}
+
+.provider-title {
+  margin-top: 25rpx;
+  font-size: 39rpx;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.provider-location {
+  margin-top: 8rpx;
+}
+
+.tag-row {
+  margin-top: 13rpx;
+}
+
+.card-heading {
+  margin-bottom: 13rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.price-row {
+  padding: 10rpx 0;
+  font-size: 27rpx;
+}
+
+.price {
+  color: #bd593f;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.price-note {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+}
+
+.book-button {
+  margin-top: 26rpx;
+}
